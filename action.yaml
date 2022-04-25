@@ -19,10 +19,12 @@ runs:
         rebar3-version: ${{ inputs.rebar3-version }}
         
     - name: Install Rust
+      shell: bash
       run: |
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
         
     - name: Install Dependencies
+      shell: bash
       run: |
         sudo apt-get install -y libsodium-dev liblz4-dev
         
