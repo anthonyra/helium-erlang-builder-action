@@ -2,10 +2,10 @@ name: "Setup Erlang Build Environment"
 description: "Setups the build environment for Helium Erlang nodes"
 
 inputs:
-  otp:
+  otp-version:
     description: “The OTP version for Erlang”
     required: true
-  rebar3:
+  rebar3-version:
     description: “The rebar3 version”
     required: true
     
@@ -15,11 +15,11 @@ runs:
      - name: Checkout Repo
        uses: actions/checkout@v2
 
-     - name: Install Erlang OTP ${{ inputs.otp }} / rebar3 ${{ inputs.rebar3 }}
+     - name: Install Erlang OTP ${{ inputs.otp-version }} / rebar3 ${{ inputs.rebar3-version }}
        uses: erlef/setup-beam@v1
        with:
-        otp-version: ${{ inputs.otp }}
-            rebar3-version: ${{ inputs.rebar3 }}
+        otp-version: ${{ inputs.otp-version }}
+            rebar3-version: ${{ inputs.rebar3-version }}
         
         - name: Install Rust
           run: |
