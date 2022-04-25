@@ -12,9 +12,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Checkout Repo
-      uses: actions/checkout@v2
-
     - name: Install Erlang OTP ${{ inputs.otp-version }} / rebar3 ${{ inputs.rebar3-version }}
       uses: erlef/setup-beam@v1
       with:
